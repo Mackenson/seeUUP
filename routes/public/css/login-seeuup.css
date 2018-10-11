@@ -1,0 +1,250 @@
+
+body{
+  background: yellow;
+}
+.row{
+    margin: 0px!important;
+}
+
+input,select{
+    background-color: rgba(245, 239, 239, 0.6)!important;
+    border: gray 2px solid!important;
+}
+
+/* unvisited link */
+a:link {
+    color: #199BB5!important;
+    text-decoration: underline;
+}
+/* visited link */
+a:visited {
+    color: #199BB5!important;
+    text-decoration: underline;
+}
+/* mouse over link */
+a:hover {
+    color: #C51E57!important;
+    text-decoration: underline;
+}
+/* selected link */
+a:active {
+    color: blue!important;
+    text-decoration: underline;
+}
+.container-fluid{
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container{
+    background-image: url('/img/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-position:50% 50%;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 900px;
+    position: relative;
+    .login-whole{
+        text-align: center;
+        color:rgb(136, 132, 132);
+        width: 35%;
+        height: 90%;
+        position: absolute;
+        margin: auto;
+        left: 0; right: 0; top: 0; bottom: 0;
+        h2{
+          font-weight: bold;
+          text-shadow: 2px 2px 1px #000;
+        }
+        h5{
+          font-weight: bold;
+          text-shadow: 2px 2px 1px #000;
+          font-size: 1.2em;
+        }
+        .login{
+            margin-top:5%;
+            width: 100%;
+            height: auto;
+            // border: black 1px solid;
+            border-radius: 8px;
+            background-color: rgba(245, 239, 239, 0.7);
+            .language-setting{
+                padding:3%;
+            }
+            .social-login{
+               width:70%;
+            //    padding:5% 20% 5% 20%;
+                margin:auto;
+                // border: black 1px solid;
+                height: auto;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    width: 100%;
+
+                }
+
+            }
+            .sp-line{
+                width: 100%;
+                height: 30px;
+                position: relative;
+                .circle{
+                    position: absolute;
+                    left: 0; right: 0; top: 0; bottom: 0;
+                    margin: 0 auto;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
+                    background-color: rgba(245, 239, 239, 0.8);
+                }
+            }
+            .username,.password{
+                padding: 0 4%;
+                text-align: left;
+                color:rgb(80, 78, 78);
+                p{
+                    margin-bottom: 5px;
+                    span{
+                        color:red;
+                    }
+                }
+                input{
+                    width: 100%;
+                }
+            }
+            .button-container{
+                margin: 10px 0!important;
+                display: flex;
+                flex-wrap:nowrap;
+                justify-content: space-around;
+                button{
+                    background-color: #45A1AA;
+                    color:white;
+                    width:100px;
+
+                }
+            }
+            .info{
+                text-align: left;
+                padding-left: 4%;
+                color:#45A1AA!important;
+            }
+        }
+    }
+    .signup-whole{
+        display: none;
+
+        text-align: center;
+        color:rgb(136, 132, 132);
+        width: 35%;
+        height: 90%;
+        position: absolute;
+        margin: auto;
+        left: 0; right: 0; top: 0; bottom: 0;
+        h1{
+            color:#45A1AA;
+        }
+        .signup{
+            margin-top:5%;
+            width: 100%;
+            height: 60%;
+            // border: black 1px solid;
+            border-radius: 8px;
+            background-color: rgba(245, 239, 239, 0.7);
+            .email{
+                width:100%;
+                padding:10% 14% 0 14%;
+                input{
+                    width: 100%;
+                    height: 50px;
+                }
+            }
+            .password{
+                width:100%;
+                padding:5% 14% 0 14%;
+                input{
+                    width: 100%;
+                    height: 50px;
+                }
+            }
+            .button-container{
+                width: 100%;
+                padding: 5% 14% 0 14%;
+                button{
+                    width: 100%;
+                    background-color: #45A1AA;
+                    color:white;
+                }
+            }
+            .back{
+                width:100%;
+                color:#45A1AA!important;
+            }
+        }
+    }
+    .forget-whole{
+        display: none;
+
+        text-align: center;
+        color:rgb(136, 132, 132);
+        width: 35%;
+        height: 90%;
+        position: absolute;
+        margin: auto;
+        left: 0; right: 0; top: 0; bottom: 0;
+
+        .forget{
+            margin-top:5%;
+            width: 100%;
+            height: 60%;
+            // border: black 1px solid;
+            border-radius: 8px;
+            background-color: rgba(245, 239, 239, 0.9);
+            h3{
+                color:#535252;
+                padding: 5%
+            }
+            .content{
+                color:#6B6A6A;
+                padding: 0 10%;
+                p{
+                    font-size: 95%;
+                }
+            }
+            .email{
+                width:100%;
+                height: 80px;
+                padding:3% 5% 15% 5%;
+                input{
+                    background-color:#DFE2E2!important;
+                    height: 50px!important;
+                }
+            }
+            .button-container{
+                width:100%;
+                padding:0 5%;
+                button{
+                    background-color: #055472;
+                    width: 100%;
+                    height:50px;
+                    color:white;
+                }
+            }
+            .goback{
+                text-align: right;
+                width:100%;
+                padding:5% 5%;
+            }
+            .reserved{
+                text-align: center;
+                color:#6B6A6A;
+                width:100%;
+                padding: 5% 5% 0 ;
+                font-size:95%
+            }
+        }
+    }
+}

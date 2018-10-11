@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<!-- SCRIPTS AND STYLES -->
+ 	<link href="./routes/css/login-seeuup.css" rel="stylesheet" type="text/css">
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="867291517269-vnhhv5ri5s46b6uijt0gbrno286aoqpl.apps.googleusercontent.com">
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <!-- <script src="https://apis.google.com/js/platform.js?onload=onLoadGoogleCallback" async defer></script> -->
+
+    <title>Login</title>
+</head>
+<body>
+<!--facebook???-->
+<div id="fb-root"></div>
+<!--facebook-->
+	<!-- lander-header -->
+
+    <div class="container-fluid">
+        <div class="login-container">
+            <div class="login-whole">
+                <h2>Welcome to seeUUP</h2>
+                <h5>Please Login</h5>
+                <div class="login">
+                    <div class="language-setting row">
+                        <input  value="<%=lang%>" rel="language" style="display: none">
+                        <select id="select-lang" class="form-control col-3 offset-9">
+                            <option value="en">English</option>
+                            <option value="fr">french</option>
+                        </select>
+                    </div>
+                    <div class="social-login">
+                        <!-- <div class="fb-login-button" data-width="300" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" scope="public_profile,email" onlogin="checkLoginState();"></div> -->
+                    </div>
+                    <div class="social-login"  >
+                        <!-- <div class="g-signin2"  data-onsuccess="onSignIn" data-width="300" data-height="40" data-longtitle="true" data-theme="dark"></div> -->
+                    </div>
+                    <div class="sp-line">
+                        <div class="circle">
+                            or
+                        </div>
+                    </div>
+
+
+                    <div class="username">
+                        <p> <span>*</span>:</p>
+                        <input id= "email" class="form-control" type="text">
+                    </div>
+                    <div class="password">
+                        <p> <span>*</span>:</p>
+                        <input id = "password" class="form-control" type="password">
+                    </div>
+                    <div class="button-container row">
+                        <button type="button" class="btn" rel="signup"></button>
+                        <button id="btn_login" type="button" class="btn" rel="signin"></button>
+                    </div>
+                    <div class="info">
+                        <a  rel="forget" href="#">forget your password?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signup-whole">
+                <h1>Sign up</h1>
+                <div class="signup">
+                    <div class="email">
+                        <input id="email_r" class="form-control" type="text" placeholder="Email">
+                    </div>
+                    <div class="password">
+                        <input id="pswd" class="form-control" type="password" placeholder="Password">
+                    </div>
+                    <div class="password">
+                        <input id="rePswd" class="form-control" type="password" placeholder="Re-enter password">
+                    </div>
+                    <div class="button-container">
+                        <button id= "btn_signup" type="button" class="btn">Sign Up</button>
+                    </div>
+                    <div class="back">
+                        <a href="#" rel="back">Go back to login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="forget-whole">
+                <div class="forget">
+                    <h3>Password Reset</h3>
+                    <div class="content">
+                        <p>To reset your password, enter the email
+                                address you use to sign in
+                        </p>
+                    </div>
+                    <div class= "email">
+                        <input id= "forget-email" class="form-control" type="text" placeholder="Email">
+                    </div>
+                    <div class="button-container">
+                        <button id= "forget-submit" type="button" class="btn">Get Reset Link</button>
+                    </div>
+                    <div class="goback">
+                        <a href="#" rel="forget-back">Go back to Log in</a>
+                    </div>
+                    <div class="reserved">
+                        2018 seeUUP. All rights reserved.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+	<script src="./function.js"></script>
