@@ -2,8 +2,8 @@ let express = require('express');
 let router = express.Router();
 
 //Resgister
-router.get('/register', function(req, res) {
-  res.render('register')
+router.get('/resgister', function(req, res) {
+  res.render('/seeuup-client')
 })
 
 //Login
