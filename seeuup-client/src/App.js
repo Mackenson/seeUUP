@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Registration from './Registration'
 
 class App extends Component {
   state = {
@@ -26,6 +27,7 @@ class App extends Component {
           <h1>Welcome to SeeUUp</h1>
         </header>
         <p>{this.state.response}</p>
+      <Registration />
       </div>
     );
   }
