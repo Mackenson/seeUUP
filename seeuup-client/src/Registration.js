@@ -7,7 +7,23 @@ class Registration extends Component {
     this.state = {
       input: []
     }
+    this.trackUserInput = this.trackUserInput.bind(this)
   }
+  // componentWillMount(){
+  //   fetch('/home',{
+  //   method: 'POST',
+  //   body: JSON.stringify({ input: this.state.input}),
+  //   headers: {"Content-Type": "application/json"}
+  // })
+  // .then(function(response){
+  //   return response.json();
+  // }).then(function(body){
+  //   console.log(body);
+  // });
+  // }
+
+
+
   trackUserInput(submision){
     let allInput = this.state.input
     this.setState({input: allInput.concat(submision)})
@@ -18,7 +34,7 @@ class Registration extends Component {
         <div className="row">
           <div className="medium-6 medium-offset-3 small-12 columns">
             <RegistrationForm
-              trackHandleInput={this.trackHandleInput}
+              trackUserInput={this.trackUserInput}
             />
           </div>
         </div>
