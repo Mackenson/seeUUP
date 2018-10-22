@@ -4,15 +4,20 @@ class RegistrationForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      firstname: "",
-      lastname: "",
-      emails: ""
+      firstName: "",
+      lastName: "",
+      emails: "",
+      password: "",
+      confirmPassword: ""
     }
     this.handleChangeFirstName = this.handleChangeFirstName.bind(this)
     this.handleChangeLastName = this.handleChangeLastName.bind(this)
     this.handleChangeEmails = this.handleChangeEmails.bind(this)
+    this.handleChangePassword = this.handleChangePassword.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChangeConfirmPassword = this.handleChangeConfirmPassword.bind(this)
   }
-  
+
   handleChangeFirstName(event){
     event.preventDefault()
     this.setState({
@@ -34,14 +39,30 @@ class RegistrationForm extends Component {
     })
   }
 
+  handleChangePassword(event){
+    event.preventDefault()
+    this.setState({
+      password: event.target.value
+    })
+  }
+
+  handleChangeConfirmPassword(event){
+    event.preventDefault();
+    this.setState({
+      confirmPassword: event.target.value
+    })
+  }
+
   handleSubmit(event){
     event.preventDefault()
     let formLoad = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
-      emails: this.state.emails
+      emails: this.state.emails,
+      password: this.state.password,
+      confirmPassword: this.state.confirmPassword
     }
-    this.props.trackHandleInput(formLoad)
+    this.props.trackUserInput(formLoad)
   }
 render(){
   return(
@@ -55,12 +76,22 @@ render(){
 
           <div>
             <label htmlFor="lastName">Last Name:</label>
-            <input type="text" id="last-name" name="lastName" value={this.state.lastName} onChange={this.handleChangeLasteName} />
+            <input type="text" id="last-name" name="lastName" value={this.state.lastName} onChange={this.handleChangeLastName} />
           </div>
 
           <div>
             <label htmlFor="emails">Emails:</label>
             <input type="text" id="emails" name="emails" value={this.state.emails} onChange={this.handleChangeEmails} />
+          </div>
+
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input type="text" id="password" name="password" value={this.state.password} onChange={this.handleChangePassword} />
+          </div>
+
+          <div>
+            <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input type="text" id="confirm-password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleChangeConfirmPassword} />
           </div>
 
           <input type="submit" className="button" value="Submit "/>
