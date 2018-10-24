@@ -27,7 +27,7 @@ class App extends Component {
           <h1>Welcome to SeeUUp</h1>
         </header>
         <p>{this.state.response}</p>
-      <Registration />
+        <Registration />
       </div>
     );
   }
