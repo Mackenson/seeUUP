@@ -1,0 +1,20 @@
+#homepage-header{
+  background: silver;
+  width: 80%;
+  margin: auto;
+}
+
+.homepage-img{
+  width: 785px;
+  height: 400px;
+}
+
+#homepage-top{
+  margin-left: 47rem;
+}
+
+#homepage-globe-img{
+  width: 200px;
+  margin-left: 34rem;
+  margin-top: 11rem;
+}

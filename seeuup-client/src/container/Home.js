@@ -1,33 +1,26 @@
-import React, { Component } from 'react';
-import Registration from './Registration'
-
+import React, { Component } from 'react'
+import '../css/homepage.css'
 class Home extends Component {
   state = {
     response: ''
   };
 
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
-
-  callApi = async () => {
-    const response = await fetch('/home');
-    const body = await response.json();
-
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
   render() {
     return (
       <div>
         <header>
-          <h1>Welcome to SeeUUp</h1>
+          <div id='homepage-header'>
+            <div>
+              <img className='homepage-img' id='homepage-top' src='../images/mark.jpg' />
+            </div>
+
+            <div>
+              <img className='homepage-img' src='../images/bouquet.jpg' />
+            <img id='homepage-globe-img' src='../images/globe-logo.jpg' />
+            </div>
+            
+          </div>
         </header>
-        <p>{this.state.response}</p>
-        <Registration />
       </div>
     );
   }
