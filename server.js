@@ -20,7 +20,7 @@ let users = require('./routes/users');
 //Init App
 
 let app = express();
-
+console.log(db);
 //View engine
 // API calls
 app.get('/home', (req, res) => {

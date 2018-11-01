@@ -9,18 +9,31 @@ class Registration extends Component {
     }
     this.trackUserInput = this.trackUserInput.bind(this)
   }
-  // componentWillMount(){
-  //   fetch('/home',{
-  //   method: 'POST',
-  //   body: JSON.stringify({ input: this.state.input}),
-  //   headers: {"Content-Type": "application/json"}
-  // })
-  // .then(function(response){
-  //   return response.json();
-  // }).then(function(body){
-  //   console.log(body);
-  // });
-  // }
+componentWillMount(){
+  let callApi = async () => {
+    const location = window.location.seeUUP;
+    const settings = {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        }
+    };
+
+    const data = await fetch(`mongodb://localhost/${location}`, settings)
+        .then(response => response.json())
+        .then(json => {
+            return json;
+        })
+        .catch(e => {
+            return e
+        });
+
+    return data;
+
+
+  }
+}
 
 
 
@@ -29,6 +42,7 @@ class Registration extends Component {
     this.setState({input: allInput.concat(submision)})
   }
   render(){
+    console.log(this.state.input);
     return(
       <div>
         <div className="row">
