@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let user = require('../models/user')
+let User = require('../models/user')
 
 //Resgister
 router.post('/register', function(req, res) {
@@ -34,14 +34,13 @@ router.post('/register', function(req, res) {
       console.log(user);
     })
     req.flash('succes_msg', 'You are registered and can login now')
-
-    res.redirect('/users/login')
+    res.redirect('/home');
   }
 })
 
 //Login
 router.get('/login', function(req, res) {
-  res.render('login')
+  res.send({ express: 'bonjour From Express' });
 })
 
 module.exports = router;

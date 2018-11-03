@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import RegistrationForm from './RegistrationForm'
+import '../css/registration-form.css'
 
 class Registration extends Component {
   constructor(props) {
@@ -28,16 +29,16 @@ class Registration extends Component {
     console.log(this.state.input);
     return(
       <div >
-        <div className="row">
-          <div className="medium-6 medium-offset-3 small-12 columns">
+        <div className="ro container">
+          <video  autoPlay loop className="video-fullscreen" type="video/mp4"  src="../video/seeuup.mp4" autoPlay="autoplay" loop muted>
+          </video>
+          <div className="medium-6 medium-offset-3 small-12 columns registration-form">
             <RegistrationForm
               trackUserInput={this.trackUserInput}
             />
           </div>
-          <video  autoPlay loop className="w-100 h-100" type="video/mp4"  src="../video/seeuup.mp4" autoPlay="autoplay" loop muted>
-          </video>
+          <div id='form-overlay'></div>
         </div>
-
       </div>
     )
   }
