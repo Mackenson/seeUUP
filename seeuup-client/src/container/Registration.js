@@ -27,13 +27,15 @@ class Registration extends Component {
   render(){
     console.log(this.state.input);
     return(
-      <div>
+      <div >
         <div className="row">
           <div className="medium-6 medium-offset-3 small-12 columns">
             <RegistrationForm
               trackUserInput={this.trackUserInput}
             />
           </div>
+          <video  autoPlay loop className="w-100 h-100" type="video/mp4"  src="../video/seeuup.mp4" autoPlay="autoplay" loop muted>
+          </video>
         </div>
 
       </div>
