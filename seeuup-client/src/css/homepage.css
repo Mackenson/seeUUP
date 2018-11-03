@@ -1,3 +1,5 @@
+import "~video-react/dist/video-react.css"
+
 #homepage-header{
   background: silver;
   width: 80%;
