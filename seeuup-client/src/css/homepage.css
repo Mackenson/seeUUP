@@ -26,11 +26,7 @@ body{
 }
 
 #homepage-top{
-  margin-left: 45rem;
-}
-
-.bottom{
-  margin-left: 0.5rem;
+  margin-left: 45.5rem;
 }
 
 #seeuup-logo1{
@@ -44,6 +40,16 @@ body{
 .seeuup-logo1-img{
   width: 25vw;
   height: 20vh;
+}
+
+.header-p{
+  display: inline-block;
+  float: right;
+  font-size: 2rem;
+  width: 20vw;
+  margin-right: 15rem;
+  margin-top: 5rem;
+  color: #0072ff;
 }
 
 #homepage-globe-img{
@@ -71,4 +77,14 @@ body{
   line-height: 1;
   width: 10px;
   margin-bottom: -0.18rem;
+}
+
+.body-p{
+  width: 60vw;
+  margin-left: 12rem;
+  margin-top: 3rem;
+  display: inline-block;
+  font-size: 1.52rem;
+  font-weight: bold;
+  color: #0072ff;
 }
