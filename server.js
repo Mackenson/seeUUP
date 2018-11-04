@@ -20,22 +20,13 @@ let users = require('./routes/users');
 //Init App
 
 let app = express();
-
+console.log(db);
 //View engine
 // API calls
 app.get('/home', (req, res) => {
   res.send({ express: 'bonjour From Express' });
 });
 
-app.post('/home', (req, res) => {
-  debugger
-  console.log(req.body);
-  // let firstName = req.body.firstName;
-  // let lastName = req.body.lastName;
-  // let emails = req.body.emails;
-  // let password = req.body.password;
-  // let password2 = req.body.password2;
-});
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
@@ -94,6 +85,9 @@ app.use(function(req, res, next) {
     res.locals.error = req.flash('error');
     next();
 })
+
+app.use('/', routes)
+app.use('/users', users)
 
 //Set Port
 app.set('port', (process.env.PORT || 5000));
