@@ -1,20 +1,73 @@
-#homepage-header{
-  background: silver;
-  width: 80%;
-  margin: auto;
+*{
+  box-sizing: border-box;
 }
 
+body{
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#homepage-header{
+  background: silver;
+  width: 80vw;
+  height: auto;
+  margin: auto;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1),
+              0px 8px 15px rgba(0, 0, 0, 0.1),
+              0px 8px 15px rgba(0, 0, 0, 0.1);
+}
 .homepage-img{
-  width: 785px;
-  height: 400px;
+  width: 42vw;
+  height: 50vh;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, .1),
+              -10px 8px 15px rgba(0, 0, 0, .1),
+              10px 8px 15px rgba(0, 0, 0, .1);
 }
 
 #homepage-top{
-  margin-left: 47rem;
+  margin-left: 45rem;
+}
+
+.bottom{
+  margin-left: 0.5rem;
+}
+
+#seeuup-logo1{
+  background: #fff;
+  height: 45px;
+  width: 25vw;
+  position: relative;
+  left: 12rem;
+}
+
+.seeuup-logo1-img{
+  width: 25vw;
+  height: 20vh;
 }
 
 #homepage-globe-img{
   width: 200px;
-  margin-left: 34rem;
-  margin-top: 11rem;
+  margin-left: 83rem;
+  margin-top: -13rem;
+  display: flex;
+  float: left;
+}
+
+.uup-logo{
+  height: 10vh;
+  width: 5vw;
+  float: right;
+  display: inline-block;
+  margin-right: 15rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.uup-logo p{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0072ff;
+  line-height: 1;
+  width: 10px;
+  margin-bottom: -0.18rem;
 }
