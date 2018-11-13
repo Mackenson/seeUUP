@@ -62,13 +62,13 @@ class RegistrationForm extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     }
-    this.props.trackUserInput(formLoad)
+    this.props.registrationTrackUserInput(formLoad)
   }
 render(){
   return(
     <div>
       <form className="callout" id="seeuup-form" onSubmit={this.handleSubmit}>
-        <h1>Registration Form</h1>
+        <h1>Registration Now!</h1>
           <div>
             <label htmlFor="firstName">First Name:</label>
             <input type="text" id="first-name" name="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName} />

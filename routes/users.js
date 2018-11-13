@@ -1,6 +1,8 @@
 let express = require('express');
 let router = express.Router();
 let User = require('../models/user')
+let passport = require('passport')
+let localStrategy = require('passport-local').Strategy
 
 //Resgister
 router.post('/register', function(req, res) {
@@ -38,7 +40,46 @@ router.post('/register', function(req, res) {
   }
 })
 
+//local
+passport.use(new localStrategy(
+  function(emails, password, done) {
+    User.getUserByEmails(emails, function(err, user){
+      if (err) {
+        throw err
+      }else if (!user) {
+        return done(null, false, {message: 'Unknown user'});
+      }
+
+      User.comparePassword(password, user.password, function(err, compare) {
+        if (err) {
+          throw err
+        } else if(compare) {
+          return done(null, user);
+        }else {
+          return done(null, false, {message: 'Invalid Password'});
+        }
+      })
+    })
+  }))
+
+  //serialize
+passport.serializeUser(function(user, done){
+  done(null, user.id)
+})
+
+passport.deserializeUser(function (id, done){
+  User.getUserById(id, function(err, user) {
+    done(err, user)
+  })
+})
 //Login
+router.post('/login',
+  passport.authenticate('local', {successRedirect: '/', failureRedirect: '/users', failureFlash: true}),
+  function(req, res) {
+    res.redirect('/')
+  })
+
+//
 router.get('/login', function(req, res) {
   res.send({ express: 'bonjour From Express' });
 })

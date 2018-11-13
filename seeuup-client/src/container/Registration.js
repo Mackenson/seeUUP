@@ -1,18 +1,21 @@
 import React, {Component} from "react"
 import RegistrationForm from './RegistrationForm'
+import LoginForm from './LoginForm'
 import '../css/registration-form.css'
 
 class Registration extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      input: []
+      registrationInput: [],
+      loginInput: []
     }
-    this.trackUserInput = this.trackUserInput.bind(this)
+    this.registrationTrackUserInput = this.registrationTrackUserInput.bind(this)
+    this.loginTrackUserInput = this.loginTrackUserInput.bind(this)
   }
 
-  trackUserInput(submision) {
-    console.log(submision);
+  registrationTrackUserInput(submision) {
+    console.log('this is submision',submision);
     fetch(`/users/register`, {
       method: 'POST',
       body: JSON.stringify(submision),
@@ -21,12 +24,27 @@ class Registration extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      let allInput = this.state.input
-      this.setState({input: allInput.concat(body)})
+      let allInput = this.state.registrationInput
+      this.setState({registrationInput: allInput.concat(body)})
+    })
+  }
+
+  loginTrackUserInput(submision) {
+    console.log(submision);
+    fetch(`/users/login`, {
+      method: 'POST',
+      body: JSON.stringify(submision),
+      credentials: 'same-origin',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let allInput = this.state.loginInput
+      this.setState({loginInput: allInput.concat(body)})
     })
   }
   render(){
-    console.log(this.state.input);
+    console.log('this is input',this.state.registrationInput);
     return(
       <div >
         <div className="ro container">
@@ -34,7 +52,7 @@ class Registration extends Component {
           </video>
           <div className="medium-6 medium-offset-3 small-12 columns registration-form">
             <RegistrationForm
-              trackUserInput={this.trackUserInput}
+              registrationTrackUserInput={this.registrationTrackUserInput}
             />
           </div>
           <div id='form-overlay'></div>
