@@ -30,3 +30,22 @@ let bcrypt = require('bcryptjs');
      });
    });
  };
+
+
+ module.exports.getUserByEmails = function(emails, callback){
+   let query = {emails: emails}
+   User.findOne(query, callback)
+ }
+
+ module.exports.getUserById = function(id, callback){
+   User.findById(id, callback)
+ }
+
+ module.exports.comparePassword = function(userPassword, hash, callback) {
+   bcrypt.compare(userPassword, hash, function(err, match) {
+     if (err) {
+       throw err
+     }
+     callback(null, match)
+   })
+ }
