@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import '../css/homepage.css'
 import { Link } from 'react-router';
+import { setTranslations, setDefaultLanguage, translate } from 'react-multi-lang'
+// import pt from 'pt.json'
+// import en from 'i18n.json'
+import type { T } from 'react-multi-lang'
+
+// setTranslations({pt})
+setDefaultLanguage('en')
 
 class Home extends Component {
   state = {
@@ -8,11 +15,15 @@ class Home extends Component {
   };
 
   render() {
+
+    const { translate } = this.props
+    console.log(translate);
     return (
       <div>
         <body>
+
           <div id='seeuup-logo1'>
-            <img className='seeuup-logo1-img' src='../images/seeuup-logo1.jpg' />
+            <img className='seeuup-logo1-img' src='../images/see2.jpg' /><img className='seeuup-logo1-img' src='../images/uup-logo.jpg' />
           </div>
           <header>
             <div id='homepage-header'>

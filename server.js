@@ -16,10 +16,16 @@ let db = mongoose.connection;
 
 let routes = require('./routes/index');
 let users = require('./routes/users');
+let images = require('./routes/regitrationImages');
 
 //Init App
 
 let app = express();
+
+app.use('/', routes)
+app.use('/users', users)
+app.use('/images', images)
+
 console.log(db);
 //View engine
 // API calls
@@ -85,9 +91,6 @@ app.use(function(req, res, next) {
     res.locals.error = req.flash('error');
     next();
 })
-
-app.use('/', routes)
-app.use('/users', users)
 
 //Set Port
 app.set('port', (process.env.PORT || 5000));
