@@ -33,24 +33,23 @@ class LoginForm extends Component {
       emails: this.state.emails,
       password: this.state.password
     }
-    this.props.trackUserInput(formLoad)
+    this.props.loginTrackUserInput(formLoad)
   }
 render(){
   return(
     <div>
       <form className="callout" id="seeuup-login-form" onSubmit={this.handleSubmit}>
-        <h1>Login</h1>
-      <div id='emails-float'>
-            <label htmlFor="emails">Emails:</label>
-            <input type="text" id="emails" name="emails" value={this.state.emails} onChange={this.handleChangeEmails} />
+        <div id="login-sec-div">
+          <div id='emails-float'>
+              <input type="text" id="emails" placeholder="emails" name="emails" value={this.state.emails} onChange={this.handleChangeEmails} />
           </div>
 
-          <div id='password-float'>
-            <label htmlFor="password">Password:</label>
-            <input type="text" id="password" name="password" value={this.state.password} onChange={this.handleChangePassword} />
-          </div>
+              <div id='password-float'>
+                <input type="text" id="password" placeholder="password" name="password" value={this.state.password} onChange={this.handleChangePassword} />
+              </div>
 
-          <input type="submit" className="button" value="Submit "/>
+              <input type="submit" className="button" value="Login "/>
+          </div>
         </form>
       </div>
     )

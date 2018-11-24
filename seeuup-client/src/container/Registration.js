@@ -5,6 +5,7 @@ import Route from 'react-router-dom/Route'
 import RegistrationForm from './RegistrationForm'
 import LoginForm from './LoginForm'
 import Home from './Home';
+import BackgroundImages from '../component/BackgroundImages';
 import '../css/registration-form.css'
 
 import { createBrowserHistory } from "history";
@@ -53,48 +54,27 @@ class Registration extends Component {
       this.setState({loginInput: allInput.concat(body)})
     })
   }
-  componentDidMount() {
-  fetch('/images/boss')
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-              error = new Error(errorMessage);
-          throw(error);
-        }
-        console.log("this is response",response);
-      })
-      .then(response => response.json())
-      .then(body => {
-        console.log("this is bdoy",body);
-        this.setState({images: this.state.images.concat(body)})
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}` ));
-    }
-
 
   render(){
-    // console.log(this.state.images[0].Images);
-    let allImages = this.state.images
-    allImages.map((image)=>{
-      image.Images.map((img)=>{
-        
-      })
-    })
 
     return(
       <div >
-        <div className="ro cntainer">
-          <div className="medium-6 medium-offset-3 small-12 columns registration-form">
-            <RegistrationForm
-              registrationTrackUserInput={this.registrationTrackUserInput}
-            />
-          </div>
-          <div id='form-oerlay'></div>
+        <LoginForm
+          loginTrackUserInput={this.state.loginTrackUserInput}
+        />
+        <img className="background-img"  src="../images/example1.jpg"/>
+        <img className="background-img"  src="../images/seeuupblack1.jpg"/>
+        <img className="background-img"  src="../images/seeuupblack2.jpeg"/>
+        <img className="background-img"  src="../images/seeuupblack3.jpg"/>
+        <img className="background-img"  src="../images/example2.jpg"/>
+        <img className="background-img"  src="../images/seeuupblack4.jpeg"/>
+        <div className="main-form" >
+        <RegistrationForm
+          registrationTrackUserInput={this.registrationTrackUserInput}
+        />
         </div>
       </div>
-    )
+  )
   }
 }
 

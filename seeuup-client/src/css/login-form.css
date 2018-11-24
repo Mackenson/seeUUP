@@ -3,16 +3,47 @@
 }
 
 #seeuup-login-form{
-  margin-top: 2rem;
-  width: 80vw;
-  display: inline-block !important;
-  z-index: 2;
+  height: 10vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  opacity: 1;
+  color: #ffffff !important;
+  z-index: 1;
+}
+
+#login-sec-div{
+  position: absolute;
+  display: inline-block;
+  float: right;
+}
+
+.button{
+  width: 8vw;
+  z-index: 1;
+  border: 1px solid #ffffff;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  background: #2b4250 !important;
 }
 
 #emails-float{
   display: inline-block;
+  width: 15vw;
+  margin-right: 1.5rem;
 }
 
 #password-float{
   display: inline-block;
+  width: 15vw;
+}
+
+#emails{
+  font-size: 1.5rem;
+}
+
+#password{
+  font-size: 1.5rem;
 }
