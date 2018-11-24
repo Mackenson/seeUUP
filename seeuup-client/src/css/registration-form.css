@@ -3,11 +3,30 @@
 }
 
 body{
+  background-image: url("/public/images/example1.jpg");
   margin: 0;
   font-family: sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   overflow-x: hidden;
+  width: auto;
+  height: auto;
+}
+label{
+  color: #ffffff !important;
+  font-size: 1.5rem;
+}
+
+.main-form{
+  height: 50vh;
+  width: 30vw;
+  position: absolute;
+  top: 38vh;
+  left: 50%;
+  text-align: center;
+  background: #2b4250;
+  color: #ffffff !important;
+  z-index: 0.8;
 }
 
 .ro{
@@ -17,11 +36,20 @@ body{
   color: #fff;
 }
 
+.background-img{
+  width: 33.3vw;
+  height: 55vh;
+  opacity: 1;
+
+}
+
 .container{
+  background-image: url("/public/images/example1.jpg"); */
   padding-left: 1rem;
   padding-right: 1rem;
   margin: auto;
   text-align: center;
+
 }
 
 .video-fullscreen{
@@ -56,5 +84,5 @@ body{
   background: #93a0aab8 !important;
 }
 .callout{
-  background: #93a0aab8 !important;
+  background: #2b4250 !important;
 }

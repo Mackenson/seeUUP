@@ -26,7 +26,8 @@ body{
 }
 
 #homepage-top{
-  margin-left: 45.5rem;
+  display: inline-block;
+  float: right;
 }
 
 #seeuup-logo1{
@@ -34,12 +35,13 @@ body{
   height: 45px;
   width: 25vw;
   position: relative;
-  left: 12rem;
+  left: 11.5rem;
 }
 
 .seeuup-logo1-img{
-  width: 25vw;
-  height: 20vh;
+  height: 15vh;
+  margin-top: 2rem;
+  display: inline-block;
 }
 
 .header-p{
@@ -57,7 +59,7 @@ body{
   margin-left: 83rem;
   margin-top: -13rem;
   display: flex;
-  float: left;
+  float: right;
 }
 
 .uup-logo{

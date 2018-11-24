@@ -1,14 +1,24 @@
 import React, {Component} from "react"
+import { BrowserRouter as Router, Redirect } from 'react-router-dom'
+import Route from 'react-router-dom/Route'
+
 import RegistrationForm from './RegistrationForm'
 import LoginForm from './LoginForm'
+import Home from './Home';
+import BackgroundImages from '../component/BackgroundImages';
 import '../css/registration-form.css'
+
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory();
 
 class Registration extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      registrationInput: [],
-      loginInput: []
+      registrationInput: false,
+      loginInput: [],
+      images: []
     }
     this.registrationTrackUserInput = this.registrationTrackUserInput.bind(this)
     this.loginTrackUserInput = this.loginTrackUserInput.bind(this)
@@ -25,7 +35,8 @@ class Registration extends Component {
     .then(response => response.json())
     .then(body => {
       let allInput = this.state.registrationInput
-      this.setState({registrationInput: allInput.concat(body)})
+      this.setState({registrationInput: body})
+
     })
   }
 
@@ -43,22 +54,27 @@ class Registration extends Component {
       this.setState({loginInput: allInput.concat(body)})
     })
   }
+
   render(){
-    console.log('this is input',this.state.registrationInput);
+
     return(
       <div >
-        <div className="ro container">
-          <video  autoPlay loop className="video-fullscreen" type="video/mp4"  src="../video/seeuup.mp4" autoPlay="autoplay" loop muted>
-          </video>
-          <div className="medium-6 medium-offset-3 small-12 columns registration-form">
-            <RegistrationForm
-              registrationTrackUserInput={this.registrationTrackUserInput}
-            />
-          </div>
-          <div id='form-overlay'></div>
+        <LoginForm
+          loginTrackUserInput={this.state.loginTrackUserInput}
+        />
+        <img className="background-img"  src="../images/example1.jpg"/>
+        <img className="background-img"  src="../images/seeuupblack1.jpg"/>
+        <img className="background-img"  src="../images/seeuupblack2.jpeg"/>
+        <img className="background-img"  src="../images/seeuupblack3.jpg"/>
+        <img className="background-img"  src="../images/example2.jpg"/>
+        <img className="background-img"  src="../images/seeuupblack4.jpeg"/>
+        <div className="main-form" >
+        <RegistrationForm
+          registrationTrackUserInput={this.registrationTrackUserInput}
+        />
         </div>
       </div>
-    )
+  )
   }
 }
 
