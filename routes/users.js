@@ -8,6 +8,7 @@ let bcrypt = require('bcryptjs');
 // const history = createBrowserHistory();
 //Resgister
 router.post('/register', function(req, res) {
+  console.log(req.body);
   let firstName = req.body.firstName;
   let lastName = req.body.lastName;
   let emails = req.body.emails;
@@ -30,36 +31,6 @@ router.post('/register', function(req, res) {
     console.log('yes');
     console.log(errors);
   } else {
-    console.log(emails);
-    User.find({
-            emails: emails
-          }, (err, previousUsers) => {
-            console.log(previousUsers.length);
-            if (err) {
-            return res.send({
-                success: false,
-                message: 'Server error'
-              })
-            } else if (previousUsers.length > 0) {
-                return res.send({
-                success: false,
-                message: 'account already exist'
-              })
-            }
-
-            const newUser = new User();
-            newUser.firstName = firstName;
-            newUser.lastName = lastName;
-            newUser.emails = emails;
-            newUser.password = password;
-            newUser.confirmPassword = confirmPassword;
-            newUser.save((err, user) => {
-              if (err) {
-                return res.send({
-                  success: false,
-                  message: 'Server error'
-                })
-              }
     User.createUser(newUser, function(err, user) {
       if (err) throw err;
       console.log(user);
@@ -69,8 +40,6 @@ router.post('/register', function(req, res) {
     return res.status(200).json({
             success:true,
             redirectUrl: '/'
-        })
-      })
     })
   }
 })

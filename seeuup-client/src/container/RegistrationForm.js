@@ -68,7 +68,6 @@ render(){
   return(
     <div>
       <form className="callout" id="seeuup-form" onSubmit={this.handleSubmit}>
-        <h1>Registration Now!</h1>
           <div>
             <label htmlFor="firstName">First Name:</label>
             <input type="text" id="first-name" name="firstName" value={this.state.firstName} onChange={this.handleChangeFirstName} />
@@ -94,7 +93,7 @@ render(){
           <input type="text" id="confirm-password" name="confirmPassword" value={this.state.confirmPassword} onChange={this.handleChangeConfirmPassword} />
           </div>
 
-          <input type="submit" className="button" value="Submit "/>
+          <input type="submit" className="button" value="Sign Up "/>
         </form>
       </div>
     )

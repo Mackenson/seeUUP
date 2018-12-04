@@ -16,15 +16,14 @@ class Registration extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      registrationInput: false,
-      loginInput: [],
-      images: []
+      registrationInput: {}
     }
     this.registrationTrackUserInput = this.registrationTrackUserInput.bind(this)
     this.loginTrackUserInput = this.loginTrackUserInput.bind(this)
   }
 
   registrationTrackUserInput(submision) {
+    debugger
     console.log('this is submision',submision);
     fetch(`/users/register`, {
       method: 'POST',
@@ -34,9 +33,11 @@ class Registration extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      debugger
+      console.log(body);
       let allInput = this.state.registrationInput
-      this.setState({registrationInput: body})
-
+      this.setState({registrationInput: allInput.concat(body)})
+      // console.log("this is from render",this.state.registrationInput);
     })
   }
 
@@ -56,7 +57,7 @@ class Registration extends Component {
   }
 
   render(){
-
+    console.log("this is from render2",this.state.registrationInput);
     return(
       <div >
         <LoginForm
