@@ -24,6 +24,12 @@ class Entry extends Component {
       <div>
         <header>
           <h1>Welcome to SeeUUp</h1>
+          <Link to='Registration'>
+            <div className='uup-logo'>
+              <p>Click here to SIGN</p>
+              <img src='../images/uup-logo.jpg' />
+            </div>
+          </Link>
         </header>
         <p>{this.state.response}</p>
       </div>
