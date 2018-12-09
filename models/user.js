@@ -48,13 +48,6 @@ let bcrypt = require('bcryptjs');
  module.exports.getUserById = function(id, callback){
    User.findById(id, callback)
  }
- UserSchema.methods.generateHash = function(password) {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-}
-
-UserSchema.methods.validPassword = function(password) {
-  return bcrypt.compareSync(password, this.password);
-}
 
  module.exports.comparePassword = function(userPassword, hash, callback) {
    bcrypt.compare(userPassword, hash, function(err, match) {
@@ -64,5 +57,3 @@ UserSchema.methods.validPassword = function(password) {
      callback(null, match)
    })
  }
-
- module.exports = mongoose.model('User', UserSchema);

@@ -39,6 +39,9 @@ render(){
   return(
     <div>
       <form className="callout" id="seeuup-login-form" onSubmit={this.handleSubmit}>
+        <div className="login-seeuup">
+          <h1>SeeUUP <img className="login-logo" src='../images/uup-logo.jpg' /></h1>
+        </div>
         <div id="login-sec-div">
           <div id='emails-float'>
               <input type="text" id="emails" placeholder="emails" name="emails" value={this.state.emails} onChange={this.handleChangeEmails} />

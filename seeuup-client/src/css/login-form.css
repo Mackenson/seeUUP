@@ -14,6 +14,26 @@
   z-index: 1;
 }
 
+.login-seeuup{
+  display: inline-block;
+  float: left;
+  padding-right: -3rem;
+}
+.login-logo{
+  width: 3.5vw;
+  /* padding-left: -15rem; */
+  border-radius: 15%;
+}
+.seeuup-logo1-img-login{
+  width: 3vw;
+  height: 6vh;
+  z-index: 0;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
 #login-sec-div{
   position: absolute;
   display: inline-block;

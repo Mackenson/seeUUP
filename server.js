@@ -14,6 +14,8 @@ let session = require('express-session');
  mongoose.connect('mongodb://localhost/seeUUP', { useNewUrlParser: true });
 let db = mongoose.connection;
 
+let img = require('./seeuup-client/public/json/registrationPictures')
+
 let routes = require('./routes/index');
 let users = require('./routes/users');
 let images = require('./routes/regitrationImages');
