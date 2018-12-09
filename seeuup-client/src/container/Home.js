@@ -19,7 +19,7 @@ class Home extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch('regitrationImages/image');
+    const response = await fetch('regitrationImage/image');
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);
@@ -37,10 +37,10 @@ class Home extends Component {
           <header>
             <div id='homepage-header'>
               <div>
-                <img className='homepage-img' id='homepage-top' src='../images/example1.jpg' />
+                <img className='homepage-img' id='homepage-top' />
               </div>
               <div>
-                <img className='homepage-img bottom' src='../images/example2.jpg' />
+                <img className='homepage-img bottom' />
                 <span className='header-p'><p>"Display your Talents snd Skills Across the Glode, and Change the way to see Africa"</p></span>
                 <img id='homepage-globe-img' src='../images/africa-seeuup.jpg' />
               </div>
